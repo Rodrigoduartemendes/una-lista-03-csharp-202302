@@ -1,0 +1,207 @@
+﻿double num1, num2, num3, media;
+
+Console.WriteLine("Digite o primeiro número:");
+num1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Digite o primeiro número:");
+num2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Digite o primeiro número:");
+num3 = Convert.ToDouble(Console.ReadLine());
+
+if (num1 > num2 && num1 > num3)
+    Console.WriteLine("O maior número é " + num1);
+else if (num2 > num1 && num2 > num3)
+    Console.WriteLine("O maior número é " + num2);
+else if (num3 > num1 && num3 > num2)
+    Console.WriteLine("O maior número é " + num3);
+
+if (num1 < num2 && num1 < num3)
+    Console.WriteLine("O menor número é " + num1);
+else if (num2 < num1 && num2 < num3)
+    Console.WriteLine("O menor número é " + num2);
+else if (num3 < num1 && num3 < num2)
+    Console.WriteLine("O menor número é " + num3);
+media = (num1 + num2 + num3) / 3;
+Console.WriteLine("A média aritmética dos três números é " + media.ToString("F"));
+
+Console.ReadLine();
+
+
+2
+
+﻿double valorPago, valorCompra, troco;
+int nota50, nota20, nota10, nota5, nota2, nota1;
+
+Console.WriteLine("Digite o valor da compra?");
+valorCompra = double.Parse(Console.ReadLine());
+Console.WriteLine("Digite o valor da nota do pagamento?");
+valorPago = double.Parse(Console.ReadLine());
+troco = valorPago - valorCompra;
+
+
+if (valorPago > valorCompra)
+{
+    Console.WriteLine("Valor pago: " + valorPago);
+    Console.WriteLine("Valor da compra: " + valorCompra);
+    Console.WriteLine("Troco: " + troco);
+
+}
+
+nota50 = Convert.ToInt32(troco) / 50;
+troco %= 50;
+nota20 = Convert.ToInt32(troco) / 20;
+troco %= 20;
+nota10 = Convert.ToInt32(troco) / 10;
+troco %= 10;
+nota5 = Convert.ToInt32(troco) / 5;
+troco %= 5;
+nota2 = Convert.ToInt32(troco) / 2;
+troco %= 2;
+nota1 = Convert.ToInt32(troco);
+
+
+Console.WriteLine("\nNotas de R$ 50,00: " + nota50);
+Console.WriteLine("Notas de R$ 20,00: " + nota20);
+Console.WriteLine("Notas de R$ 10,00: " + nota10);
+Console.WriteLine("Notas de R$ 5,00: " + nota5);
+Console.WriteLine("Notas de R$ 2,00: " + nota2);
+Console.WriteLine("Notas de R$ 1,00: " + nota1);
+
+Console.ReadLine();
+
+3
+
+﻿double a, b, c, equacaoPrimeiroGrau, delta, x1, x2;
+
+Console.WriteLine("Digite o coeficiente a: ");
+a = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Digite o coeficiente b: ");
+b = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Digite o coeficiente c: ");
+c = Convert.ToDouble(Console.ReadLine());
+delta = Math.Pow(b, 2) - 4 * a * c;
+x1 = (-b + Math.Sqrt(delta)) / 2 * a;
+x2 = (-b - Math.Sqrt(delta)) / 2 * a;
+
+if (a == 0 && b == 0 && c != 0)
+    Console.WriteLine("Coeficientes informados incorretamente");
+else if (a == 0 && b != 0)
+{
+    equacaoPrimeiroGrau = -c / b;
+    Console.WriteLine("Essa é uma equação de primeiro grau, o valor da raiz da equação é " + equacaoPrimeiroGrau);
+}
+else if (delta < 0)
+    Console.WriteLine("Esta equação não possui raízes reais");
+else if (delta == 0)
+{
+    Console.WriteLine("Esta equação possui duas raízes reais iguais.");
+    Console.WriteLine("As raízes são: ");
+    Console.WriteLine("x1 = " + x1);
+    Console.WriteLine("x2 = " + x2);
+}
+else if (delta > 0)
+{
+    Console.WriteLine("Esta equação possui duas raízes reais diferentes.");
+    Console.WriteLine("As raízes são: ");
+    Console.WriteLine("x1 = " + x1);
+    Console.WriteLine("x2 = " + x2);
+}
+
+Console.ReadLine();
+
+4
+
+﻿double perimetroCirculo, areaCirculo, volumeEsfera, raio;
+int opcao;
+
+Console.WriteLine("Escolha uma das opções abaixo:\n1.Calcular e imprimir o perímetro do círculo.");
+Console.WriteLine("2.Calcular e imprimir a área do círculo.\n3.Calcular e imprimir o volume da esfera.");
+opcao = Convert.ToInt32(Console.ReadLine());
+
+if (opcao == 1)
+{
+    Console.WriteLine("Calcular e imprimir o perímetro do círculo");
+    Console.WriteLine("Digite o raio do círculo: ");
+    raio = Convert.ToDouble(Console.ReadLine());
+    perimetroCirculo = 2 * Math.PI * raio;
+    Console.WriteLine("O perímetro do círculo é " + perimetroCirculo.ToString("F"));
+}
+else if (opcao == 2)
+{
+    Console.WriteLine("Calcular e imprimir a área do círculo");
+    Console.WriteLine("Digite o raio do círculo: ");
+    raio = Convert.ToDouble(Console.ReadLine());
+    areaCirculo = Math.PI * Math.Pow(raio, 2);
+    Console.WriteLine("A área do círculo é " + areaCirculo.ToString("F"));
+}
+else if (opcao == 3)
+{
+    Console.WriteLine("Calcular e imprimir o volume da esfera.");
+    Console.WriteLine("Digite o raio da esfera: ");
+    raio = Convert.ToDouble(Console.ReadLine());
+    volumeEsfera = 4 * Math.PI * Math.Pow(raio, 3) / 3;
+    Console.WriteLine("O volume da esfera é " + volumeEsfera.ToString("F"));
+}
+else
+{
+    Console.WriteLine("O código da operação é inválido!!");
+}
+Console.ReadLine();
+
+
+5
+
+﻿double num1, num2;
+string operador;
+
+Console.WriteLine("Digite um número: ");
+num1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Digite outro número: ");
+num2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Digite um operador (+ , - , * , / ou ^): ");
+operador = Convert.ToString(Console.ReadLine());
+
+
+if (operador == "+")
+    Console.WriteLine("A soma dos número é {0}", num1 + num2);
+else if (operador == "-")
+    Console.WriteLine("A subtração dos número é {0}", num1 - num2);
+else if (operador == "*")
+    Console.WriteLine("A multiplicação dos número é {0}", num1 * num2);
+else if (operador == "/")
+    Console.WriteLine("A divisão dos número é {0}", num1 / num2);
+else if (operador == "^")
+    Console.WriteLine("O exponencial dos número é {0}", Math.Pow(num1,num2));
+else
+    Console.WriteLine("O símbolo da operação é inválido.");
+
+Console.ReadLine();
+
+
+6
+
+﻿int num1, num2, maiorNum, menorNum, numAleatorio;
+
+Console.WriteLine("Digite um número inteiro: ");
+num1 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Digite outro número inteiro: ");
+num2 = Convert.ToInt32(Console.ReadLine());
+
+maiorNum = Math.Max(num1, num2);
+menorNum = Math.Min(num1, num2);
+
+Random aleatorio = new Random();
+numAleatorio = aleatorio.Next(menorNum, maiorNum + 1);
+
+Console.WriteLine("Número gerado aleatoriamente: " + numAleatorio);
+
+if (numAleatorio % 2 == 0)
+{
+    Console.WriteLine("O número gerado é PAR!");
+}
+else
+{
+    Console.WriteLine("O número gerado é ÍMPAR!");
+}
+
+Console.ReadLine();
